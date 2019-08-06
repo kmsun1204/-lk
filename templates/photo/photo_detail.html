@@ -1,0 +1,81 @@
+<head>
+    {% load  staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <style>
+        h3 {
+            color: #0b2671;
+        font-family: S-CoreDream-3Light;
+}
+    </style>
+
+
+</head>
+
+<body>
+<body>
+ <div class="back">
+        <img src="{% static '../media/images/photographer_bar.png' %}" alt="back-a">
+    </div>
+    <div class="bar">
+        <a href="">로그아웃</a>
+        <a href="">마이페이지</a>
+        <a href="">게시판</a>
+        <a href="{% url 'model' %}">모델</a>
+        <a id="end" href="{% url 'photo' %}">작가</a>
+    </div>
+
+    <br><br><br><br><br><br>
+ <center>
+
+    <h3>디테일 컷</h3>
+ <br>
+    <ul>
+        {% if photo_post_detail.image1 != '' %}
+        <img src="{{ photo_post_detail.image1.url }}" width = "350" alt = "{{ photo_post_detail.title }}">
+        {% endif %}
+        {% if photo_post_detail.image2 != '' %}
+        <img src="{{ photo_post_detail.image2.url }}" width = "350" alt = "{{ photo_post_detail.title }}">
+        {% endif %}
+        {% if photo_post_detail.image3 != '' %}
+        <img src="{{ photo_post_detail.image3.url }}" width = "350" alt = "{{ photo_post_detail.title }}">
+        {% endif %}
+        {% if photo_post_detail.image4 != '' %}
+        <img src="{{ photo_post_detail.image4.url }}" width = "350" alt = "{{ photo_post_detail.title }}">
+        {% endif %}
+        {% if photo_post_detail.image5 != '' %}
+        <img src="{{ photo_post_detail.image5.url }}" width = "350" alt = "{{ photo_post_detail.title }}">
+        {% endif %}
+    </ul>
+ </center>
+ <br>
+ <center>
+    <a href="{% url 'model' %}"><button type="button" class="btn btn-default navbar-btn">되돌아가기</button></a>
+</center>
+
+    {% if is_paginated %}
+  <ul class="pagination">
+    {% if page_obj.has_previous %}
+      <li><a href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&laquo;</span></li>
+    {% endif %}
+    {% for i in paginator.page_range %}
+      {% if page_obj.number == i %}
+        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+      {% else %}
+        <li><a href="?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if page_obj.has_next %}
+      <li><a href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&raquo;</span></li>
+    {% endif %}
+  </ul>
+{% endif %}
+</body>
+
+</body>

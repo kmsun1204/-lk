@@ -1,0 +1,38 @@
+<!-- templates/post.html -->
+<head>
+    {% load  staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        h3 {
+
+            color: #0b2671;
+        font-family: S-CoreDream-3Light;
+}
+    </style>
+
+</head>
+
+<body>
+
+    <div class="back">
+        <img src="{% static '../media/images/model_bar.png' %}" alt="back">
+    </div>
+    <div class="bar">
+        <a href="">로그아웃</a>
+        <a href="">마이페이지</a>
+        <a href="">게시판</a>
+        <a href="{% url 'model' %}">모델</a>
+        <a id="end" href="{% url 'photo' %}">작가</a>
+    </div>
+<br><br><br><br><br><br>
+    <center>
+    <h3>사진을 올려 보세요!</h3>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">저장</button>
+    </form>
+    </center>
+</body>

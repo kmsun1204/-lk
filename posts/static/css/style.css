@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.photo {
+    display: inline;
+}
+@font-face {
+    font-family: 'S-CoreDream-8Heavy';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-8Heavy.woff') format('woff');
+    font-weight: normal;
+    font-style: normal; }
+@font-face {
+    font-family: 'S-CoreDream-3Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal; }
+
+.back {
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+}
+
+
+
+
+
+div.back > img {
+    z-index: 1;
+    position: relative;
+    width: 100%;
+    left: 0;
+}
+
+
+.bar {
+    z-index: 1;
+    position: fixed;
+    background-color: #0b2671;;
+    width: 65%;
+    height: 8%;
+    top: 3.8%;
+    left: 35%;
+    display: inline;
+    text-align: center;
+    vertical-align: center;
+}
+
+.bar > a {
+    font-family: S-CoreDream-3Light;
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    letter-spacing: 0.3em;
+    position: relative;
+    top: 28%;
+    padding-right: 10%;
+}
+
+#end {
+    padding-right: 0;
+}
+
+
